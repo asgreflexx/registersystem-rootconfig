@@ -16,10 +16,197 @@
   </route>
 
   -->
+  <style>
+    @font-face{font-family:'Lato';
+      src: url('/var/www/fonts/Lato-Regular.ttf') format('truetype');}
 
+    html{
+      background-color: #DDDDD9;
+      font-family: 'Helvetica';}
+
+    .topmenu{
+      width: 100%;
+      height: 120px;
+      border-bottom: 1px;
+      border-style: solid;}
+
+    .logo_top{
+      width: 25%;
+      text-align: center;}
+
+    .logo_top IMG{
+      height: 120px;}
+
+    .button_hauptmenu{
+      text-align: center;
+      font-size: 25px;}
+
+    .hmenu{
+      width: 100%;
+      height: 100%;
+      font-size: 25px;
+      text-align: center;
+      font-weight: bold;}
+
+    .hmenu a{
+      color: #000000;}
+
+    .hmenu td{
+      width: 50%;}
+
+    .button_menu{
+      width: 50%;
+      height: 100px;}
+
+    .zeile{
+      margin-top: -50px;}
+
+    .menu_top{
+      background-color: #DDDDD9;
+      height: 120px;}
+
+    #button_index{
+      heght: 120px;}
+
+    #neue_rechnung{
+      background-color: red;
+      height: 150px;
+      margin-top: -50px;}
+
+    #lager_eingang{
+      background-color: #00FF00;
+      height: 150px;
+      margin-top: -50px;
+    }
+
+    #bewegungen{
+      background-color: grey;
+      height: 150px;
+      margin-top: -145px;}
+
+    #lagerstand{
+      background-color: yellow;
+      height: 150px;
+      margin-top: -145px;}
+
+    #gewinnermittlung{
+      background-color: blue;
+      height: 150px;
+      margin-top: -190px;}
+
+    #verwaltung{
+      background-color: #EE82EE;
+      height: 150px;
+      margin-top: -190px;}
+
+    .lager_tabelle{
+      margin-top: 32px;}
+
+    .textfeld{
+      height: 50px;
+      font-size: 25px;}
+
+    .addbutton{
+      height: 50px;
+      width: 50px;
+      font-size: 25px;}
+
+    td{
+      font-size: 25px;}
+
+    .kreis_gelb{
+      background-color: yellow;
+      width: 25px;
+      height: 25px;}
+
+    .kreis_rot{
+      background-color: green;
+      width: 25px;
+      height: 25px;}
+
+    .kreis_gruen{
+      background-color: green;
+      width: 25px;
+      height: 25px;}
+
+    .dropdown td {
+      width: 50%;
+      height: 50%;
+    }
+
+    .dropdown_button_anzeigen{
+      width: 150px;
+      height: 50px;}
+
+    .anzeige_artikel{
+      margin-top: 50px;}
+  </style>
+  <nav>
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#"><img src="pictures/hfwu_logo.png"></a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href=""><i class="fas fa-home"></i>Home<span class="sr-only">(current)</span></a></li>
+          <li><a href="https://mitglieder.hundefreunde-wu.at" target="blank"><i class="fas fa-users"></i>Mitgliederdatenbank</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-receipt"></i>Kassa<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="../checkout">Neue Rechnung</a></li>
+              <li><a href="">Lager Eingang</a></li>
+              <li><a href="">Bewegungen</a></li>
+              <li><a href="">Lagerstand</a></li>
+              <li><a href="">Gewinnermittlung</a></li>
+              <li><a href="../products">Artikelverwaltung</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href=""><i class="far fa-user"></i> Max Mustermann</a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div>
+  </nav>
   <main>
     <route default>
-      <application name="@single-spa/welcome"></application>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-sm-6">
+            <a href="ausgabe.php?cmd=new" role="button" class="btn btn-default btn-main">Neue Rechnung</a>
+          </div>
+          <div class="col-md-6 col-sm-6">
+            <a href="eingabe.php" role="button" class="btn btn-primary btn-main">Lager Eingang</a>
+          </div>
+          <div class="col-md-6 col-sm-6">
+            <a href="bewegungen.php" role="button" class="btn btn-success btn-main">Bewegungen</a>
+          </div>
+          <div class="col-md-6 col-sm-6">
+            <a href="lager.php" role="button" class="btn btn-info btn-main">Lagerstand</a>
+          </div>
+          <div class="col-md-6 col-sm-6">
+            <a href="gewinn.php" role="button" class="btn btn-warning btn-main">Gewinnermittlung</a>
+          </div>
+          <div class="col-md-6 col-sm-6">
+            <a href="verwaltung.php" role="button" class="btn btn-danger btn-main">Artikelverwaltung</a>
+          </div>
+        </div>
+      </div>
+    </route>
+    <route path="/checkout">
+      <application name="@Unleash/checkout"></application>
+    </route>
+    <route path="/products">
+      <application name="productmanagement"></application>
     </route>
   </main>
 </single-spa-router>
