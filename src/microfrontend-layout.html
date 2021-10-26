@@ -17,6 +17,7 @@
 
   -->
   <style>
+    @import "https://use.fontawesome.com/releases/v5.0.4/css/all.css";
     @font-face{font-family:'Lato';
       src: url('/var/www/fonts/Lato-Regular.ttf') format('truetype');}
 
@@ -151,25 +152,16 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#"><img src="pictures/hfwu_logo.png"></a>
+        <a class="navbar-brand" href="#"><img src="Logo_01_weiss.png"/></a>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li><a href=""><i class="fas fa-home"></i>Home<span class="sr-only">(current)</span></a></li>
+          <li><a href="/"><i class="fas fa-home"></i>Home<span class="sr-only">(current)</span></a></li>
           <li><a href="https://mitglieder.hundefreunde-wu.at" target="blank"><i class="fas fa-users"></i>Mitgliederdatenbank</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-receipt"></i>Kassa<span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="../checkout">Neue Rechnung</a></li>
-              <li><a href="">Lager Eingang</a></li>
-              <li><a href="">Bewegungen</a></li>
-              <li><a href="">Lagerstand</a></li>
-              <li><a href="">Gewinnermittlung</a></li>
-              <li><a href="../products">Artikelverwaltung</a></li>
-            </ul>
-          </li>
+          <li><a href="../checkout"><i class="fas fa-money-bill-alt"></i>Neue Rechnung</a></li>
+          <li><a href="../products"><i class="fas fa-utensils"></i>Artikelverwaltung</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li><a href=""><i class="far fa-user"></i> Max Mustermann</a></li>
@@ -179,28 +171,6 @@
   </nav>
   <main>
     <route default>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 col-sm-6">
-            <a href="ausgabe.php?cmd=new" role="button" class="btn btn-default btn-main">Neue Rechnung</a>
-          </div>
-          <div class="col-md-6 col-sm-6">
-            <a href="eingabe.php" role="button" class="btn btn-primary btn-main">Lager Eingang</a>
-          </div>
-          <div class="col-md-6 col-sm-6">
-            <a href="bewegungen.php" role="button" class="btn btn-success btn-main">Bewegungen</a>
-          </div>
-          <div class="col-md-6 col-sm-6">
-            <a href="lager.php" role="button" class="btn btn-info btn-main">Lagerstand</a>
-          </div>
-          <div class="col-md-6 col-sm-6">
-            <a href="gewinn.php" role="button" class="btn btn-warning btn-main">Gewinnermittlung</a>
-          </div>
-          <div class="col-md-6 col-sm-6">
-            <a href="verwaltung.php" role="button" class="btn btn-danger btn-main">Artikelverwaltung</a>
-          </div>
-        </div>
-      </div>
     </route>
     <route path="/checkout">
       <application name="@Unleash/checkout"></application>
